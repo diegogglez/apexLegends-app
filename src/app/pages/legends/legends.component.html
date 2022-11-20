@@ -1,0 +1,7 @@
+
+<div class="cards-container">
+  <div *ngFor="let item of myCharacters" class="card">
+    <img routerLink="/legends/{{item.id}}" src="http://127.0.0.1:8090/api/files/{{item.collectionId}}/{{item.id}}/{{item.card}}" alt="{{item.name}}">
+    <h2>{{item.name}}</h2>
+  </div>
+</div>
