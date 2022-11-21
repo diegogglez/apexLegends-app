@@ -11,24 +11,12 @@ export class LegendsComponent implements OnInit {
 
   myCharacters?: any[];
 
-  /* getLegends() {
-    this.legends.getAllLegends().then((result) => console.log(result))
-  } */
   constructor(private legends: LegendsService) {
-    // this.getLegends()
     this.legends.getAllLegends()
       .then((result) => this.myCharacters = [...result])
       .catch((error) => console.error(error));
   }
 
-
-  
-  
-
-
   ngOnInit(): void {
   }
-
-
-
 }
