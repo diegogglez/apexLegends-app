@@ -14,7 +14,7 @@ export class LegendsDetailComponent implements OnInit {
 
   constructor(private activateRoute: ActivatedRoute, private legends: LegendsService) {
     this.activateRoute.paramMap.subscribe((params) => this.id = params.get('id')) //* accedemos a la id a través de activateRoute (?)
-    this.legends.getOneCharecter(this.id)
+    this.legends.getOneLegend(this.id)
       .then((result) => {
         this.myLegend = result
         console.log(result);

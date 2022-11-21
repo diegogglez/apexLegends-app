@@ -6,12 +6,16 @@ import PocketBase from 'pocketbase';
 })
 export class LegendsService {
 
-  private pb = new PocketBase('http://127.0.0.1:8090');
-/* 
-  constructor() {
+  public pb = new PocketBase('http://127.0.0.1:8090');
 
-    getAllLegends(): <promise>() => {
-      this.pb.collection('legends').getFullList();
-    }
-  } */
+  constructor() {} 
+
+  public getAllLegends() {  
+    //console.log('ejecuto el servicio');
+    return this.pb.collection('legends').getFullList();   
+  }
+
+  public getOneLegend(id: string) {
+    return this.pb.collection('legends').getOne(id)
+  }
 }

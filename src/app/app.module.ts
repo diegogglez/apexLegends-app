@@ -7,6 +7,7 @@ import { LegendsComponent } from './pages/legends/legends.component';
 import { LegendsDetailComponent } from './pages/legends-detail/legends-detail.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './pages/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LoginComponent } from './pages/login/login.component';
     LegendsComponent,
     LegendsDetailComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
