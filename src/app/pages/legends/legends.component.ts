@@ -13,7 +13,11 @@ export class LegendsComponent implements OnInit {
 
   constructor(private legends: LegendsService) {
     this.legends.getAllLegends()
-      .then((result) => this.myCharacters = [...result])
+      .then((result) => {
+        this.myCharacters = [...result];
+        console.log(result);
+        
+      })
       .catch((error) => console.error(error));
   }
 

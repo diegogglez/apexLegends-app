@@ -1,26 +1,26 @@
 <section class="legendDetail-container" *ngIf="myLegend">
   <div class="legendInfo-container">
-    <img src="http://127.0.0.1:8090/api/files/{{myLegend.collectionId}}/{{myLegend.id}}/{{myLegend.detail}}" alt="{{myLegend.name}}">
+    <img referrerpolicy="no-referrer" src="http://127.0.0.1:8090/api/files/{{myLegend?.collectionId}}/{{myLegend?.id}}/{{myLegend?.detail}}" alt="{{myLegend?.name}}">
     <div>
-      <h2>{{myLegend.name}}</h2>
-      <p>{{myLegend.info}}</p>
+      <h2>{{myLegend?.name}}</h2>
+      <p>{{myLegend?.info}}</p>
     </div>
   </div>
   <div class="skills-container">
     <div>
-      <img src="http://127.0.0.1:8090/api/files/{{myLegend.collectionId}}/{{myLegend.id}}/{{myLegend.tactic}}" >
+      <img referrerpolicy="no-referrer" src="http://127.0.0.1:8090/api/files/{{myLegend?.collectionId}}/{{myLegend?.id}}/{{myLegend?.tactic}}" >
       <h3>TACTICAL ABILITY</h3>
-      <p>{{myLegend.skills.tactic}}</p>
+      <p>{{myLegend?.skills?.tactic}}</p>
     </div>
     <div>
-      <img src="http://127.0.0.1:8090/api/files/{{myLegend.collectionId}}/{{myLegend.id}}/{{myLegend.passive}}" >
+      <img referrerpolicy="no-referrer" src="http://127.0.0.1:8090/api/files/{{myLegend?.collectionId}}/{{myLegend?.id}}/{{myLegend?.passive}}" >
       <h3>PASSIVE ABILITY</h3>
-      <p>{{myLegend.skills.passive}}</p>
+      <p>{{myLegend?.skills?.passive}}</p>
     </div>
     <div>
-      <img src="http://127.0.0.1:8090/api/files/{{myLegend.collectionId}}/{{myLegend.id}}/{{myLegend.ultimate}}" >
+      <img referrerpolicy="no-referrer" src="http://127.0.0.1:8090/api/files/{{myLegend?.collectionId}}/{{myLegend?.id}}/{{myLegend?.ultimate}}" >
       <h3>ULTIMATE ABILITY</h3>
-      <p>{{myLegend.skills.ultimate}}</p>
+      <p>{{myLegend?.skills?.ultimate}}</p>
     </div>
   </div>
 </section>

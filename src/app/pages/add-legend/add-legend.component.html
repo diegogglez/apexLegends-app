@@ -1,23 +1,36 @@
 <div class="form-container">
-  <form>
-    <input type="text" placeholder="Name">
-    <label>Card
-      <input type="file">
+  <form [formGroup]="legendForm" (ngSubmit)="onSubmit()">
+    <label>
+      <p>Legend name</p>
+      <input type="text" placeholder="Name" formControlName="name">
     </label>
-    <label>Detail
-      <input type="file">
+    <label>
+      <p>Card image</p>
+      <input type="file" name="card" formControlName="card" (change)="onFileChange($event)">
     </label>
-    <label>Tactic
-      <input type="text" placeholder="Tactic ability">
-      <input type="file">
+    <label>
+      <p>Detail image</p>
+      <input type="file" name="detail" formControlName="detail" (change)="onFileChange($event)">
     </label>
-    <label>Passice
-      <input type="text" placeholder="Passive ability">
-      <input type="file">
+    <label>
+      <p>Tactical</p>
+      <input type="text" placeholder="Tactic ability" formControlName="tacticName">
+      <input type="file" name="tactic" formControlName="tactic" (change)="onFileChange($event)">
     </label>
-    <label>Ultimate
-      <input type="text" placeholder="Ultimate ability">
-      <input type="file">
-    </label>    
+    <label>
+      <p>Passive</p>
+      <input type="text" placeholder="Passive ability" formControlName="passiveName">
+      <input type="file" name="passive" formControlName="passive" (change)="onFileChange($event)">
+    </label>
+    <label>
+      <p>Ultimate</p>
+      <input type="text" placeholder="Ultimate ability" formControlName="ultimateName">
+      <input type="file" name="ultimate" formControlName="ultimate" (change)="onFileChange($event)">
+    </label>
+    <label>
+      <p>Legend bio</p>
+      <textarea name="info" cols="60" rows="10" formControlName="info"></textarea>
+    </label>
+    <button>add</button>
   </form>
 </div>

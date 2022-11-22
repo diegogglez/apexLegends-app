@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import PocketBase from 'pocketbase';
 
 @Injectable({
@@ -8,7 +9,7 @@ export class LegendsService {
 
   public pb = new PocketBase('http://127.0.0.1:8090');
 
-  constructor() {} 
+  constructor(private http: HttpClient) {} 
 
   public getAllLegends() {  
     //console.log('ejecuto el servicio');
@@ -17,5 +18,9 @@ export class LegendsService {
 
   public getOneLegend(id: string) {
     return this.pb.collection('legends').getOne(id)
+  }
+
+  public addLegend(data: any) {
+    return this.http.post('http://127.0.0.1:8090/api/collections/legends/records', data)
   }
 }
