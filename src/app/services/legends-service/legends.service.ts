@@ -23,4 +23,9 @@ export class LegendsService {
   public addLegend(data: any) {
     return this.http.post('http://127.0.0.1:8090/api/collections/legends/records', data)
   }
+
+  public deleteLegend(id: string) {
+    //return this.pb.collection('legends').delete(id)
+    return this.http.delete('http://127.0.0.1:8090/api/collections/legends/records/'+ id)
+  }
 }

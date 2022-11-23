@@ -1,6 +1,6 @@
 import { LegendsService } from './../../services/legends-service/legends.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-legends-detail',
@@ -12,8 +12,8 @@ export class LegendsDetailComponent implements OnInit {
   id: any;
   myLegend: any;
 
-  constructor(private activateRoute: ActivatedRoute, private legends: LegendsService) {
-    this.activateRoute.paramMap.subscribe((params) => this.id = params.get('id')) //* accedemos a la id a través de activateRoute (?)
+  constructor(private activateRoute: ActivatedRoute, private legends: LegendsService, private router: Router) {
+    this.activateRoute.paramMap.subscribe((params) => this.id = params?.get('id')) //* accedemos a la id a través de activateRoute (?)
     this.legends.getOneLegend(this.id)
       .then((result) => {
         this.myLegend = result
@@ -24,6 +24,12 @@ export class LegendsDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  deleteLegend() {
+    this.legends.deleteLegend(this.id).subscribe();
+    this.router.navigate(['/legends']);
+
   }
 
 }
