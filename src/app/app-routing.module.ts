@@ -1,3 +1,4 @@
+import { UpdateLegendComponent } from './pages/update-legend/update-legend.component';
 import { AddLegendComponent } from './pages/add-legend/add-legend.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'legends', component: LegendsComponent},
   {path: 'legends/:id', component: LegendsDetailComponent},
   {path: 'createLegend', component: AddLegendComponent},
+  {path: 'uptadeLegend/:id', component: UpdateLegendComponent},
   {path: 'login', component: LoginComponent}
 ];
 

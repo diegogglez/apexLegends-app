@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AddLegendComponent implements OnInit {
   newLegend: any = {
     name: '',
-    card: ''
+    card: '',
   }
 
   legendForm!: FormGroup;
@@ -70,6 +70,7 @@ export class AddLegendComponent implements OnInit {
     formData.append('skills', JSON.stringify(skills));
 
     console.log('formData-->',formData.get('skills'));
-    this.legends.addLegend(formData).subscribe();    
+    this.legends.addLegend(formData).subscribe(); 
+    window.location.reload(); 
   }
 }

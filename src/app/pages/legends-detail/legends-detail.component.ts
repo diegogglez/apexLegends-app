@@ -15,12 +15,12 @@ export class LegendsDetailComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute, private legends: LegendsService, private router: Router) {
     this.activateRoute.paramMap.subscribe((params) => this.id = params?.get('id')) //* accedemos a la id a través de activateRoute (?)
     this.legends.getOneLegend(this.id)
-      .then((result) => {
+      .subscribe((result) => {
         this.myLegend = result
         console.log(result);
         
       })
-      .catch((error) => console.error(error));
+      // .catch((error) => console.error(error));
   }
 
   ngOnInit(): void {
@@ -29,7 +29,5 @@ export class LegendsDetailComponent implements OnInit {
   deleteLegend() {
     this.legends.deleteLegend(this.id).subscribe();
     this.router.navigate(['/legends']);
-
   }
-
 }

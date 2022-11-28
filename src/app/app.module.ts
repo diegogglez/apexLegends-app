@@ -1,3 +1,4 @@
+import { AuthconfigInterceptor } from './services/auth-service/authconfig.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +11,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AddLegendComponent } from './pages/add-legend/add-legend.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UpdateLegendComponent } from './pages/update-legend/update-legend.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     LoginComponent,
     HomeComponent,
-    AddLegendComponent
+    AddLegendComponent,
+    UpdateLegendComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,11 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthconfigInterceptor,
+    multi: true 
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

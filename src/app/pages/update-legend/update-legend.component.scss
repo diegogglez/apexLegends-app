@@ -1,0 +1,29 @@
+.form-container {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://media.contentapi.ea.com/content/dam/apex-legends/common/apex-section-bg-red-grit-texture-xl.jpg.adapt.1920w.jpg);
+
+  form {
+    background-color: rgb(18, 18, 18, 0.7);
+    
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    color: whitesmoke;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    p{
+      color: whitesmoke;
+    }
+  }
+}

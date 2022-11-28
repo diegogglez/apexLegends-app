@@ -1,11 +1,11 @@
 <section class="legendDetail-container" *ngIf="myLegend">
   <div class="legendInfo-container">
     <img referrerpolicy="no-referrer" src="http://127.0.0.1:8090/api/files/{{myLegend?.collectionId}}/{{myLegend?.id}}/{{myLegend?.detail}}" alt="{{myLegend?.name}}">
-    <div>
+    <div class="text-container">
       <h2>{{myLegend?.name}}</h2>
       <p>{{myLegend?.info}}</p>
       <button (click)="deleteLegend()">Delete</button>
-      <button>Update</button>
+      <button routerLink="/uptadeLegend/{{myLegend?.id}}">Update</button>
     </div>
   </div>
   <div class="skills-container">
